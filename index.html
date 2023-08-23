@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management</title>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            width: 110px;
+            text-align: center;
+            height: 40px;
+        }
+
+        label,
+        input {
+            margin-bottom: 15px;
+        }
+
+        label {
+            margin-right: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>THÔNG TIN HỌC VIÊN</h2>
+    <div class="form">
+        <label for="studentId">Mã học viên</label>
+        <input type="text" name="studentId" id="studentId" /> <br>
+        <label for="fullName">Họ và tên</label>
+        <input type="text" name="fullName" id="fullName" /><br>
+        <label for="email">Email</label>
+        <input type="text" name="email" id="email" /><br>
+        <label for="phone">Số điện thoại</label>
+        <input type="text" name="phone" id="phone" /><br>
+        <label for="address">Địa chỉ</label>
+        <input type="text" name="address" id="address" /><br>
+        <label>Giới tính</label>
+        <input type="radio" name="sex" id="male" value="Nam" /><label for="male">Nam</label>
+        <input type="radio" name="sex" id="female" value="Nữ" /><label for="female">Nữ</label><br>
+        <button id="submit">Lưu lại</button>
+    </div>
+    <table>
+        <caption style="margin-bottom: 10px;">DANH SÁCH HỌC VIÊN</caption>
+        <thead>
+            <tr>
+                <th>STT</th>
+                <th>Mã học viên</th>
+                <th style="width: 180px;">Họ và tên</th>
+                <th style="width: 200px;">Email</th>
+                <th>Điện thoại</th>
+                <th>Địa chỉ</th>
+                <th>Giới tính</th>
+                <th style="width: 150px;">Hành động</th>
+            </tr>
+        </thead>
+        <tbody id="listStudents">
+            <tr>
+                <td>1</td>
+                <td>${student.studentId}</td>
+                <td>${student.fullName}</td>
+                <td>${student.email}</td>
+                <th>${student.phone}</th>
+                <th>${student.address}</th>
+                <th>${student.sex}</th>
+                <th>
+                    <a id="saveBtn" href="#" onclick="">Cập nhật</a>
+                    <a href="">Xóa</a>
+                </th>
+            </tr>
+        </tbody>
+    </table>
+    <script src="./script.js"></script>
+</body>
+
+</html>
